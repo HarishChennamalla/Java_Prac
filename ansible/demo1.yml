@@ -1,6 +1,6 @@
 - name: Demo1
   hosts: 3.91.218.157
-  task:
+  tasks:
     - name: print the message
       ansible.builtin.debug:
         msg: This is a demo message
