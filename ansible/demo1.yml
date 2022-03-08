@@ -1,5 +1,6 @@
-- name: Demo Project
-  hosts: 3.231.164.10
-  tasks:
-    ansible.builtin.debug:
-      msg: "Welcome to Ansible"
+---
+  - name: Demo Project
+    hosts: 3.231.164.10
+    tasks:
+      ansible.builtin.debug:
+        msg: "Welcome to Ansible"
