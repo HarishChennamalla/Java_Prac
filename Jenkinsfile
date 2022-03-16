@@ -22,5 +22,15 @@ pipeline
                 sh ' mvn clean package'
             }
         }
+        stage('checking the code-quality')
+        {
+            steps
+            {
+                withSonarQubeEnv('sonar')
+                {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
     }
 }
