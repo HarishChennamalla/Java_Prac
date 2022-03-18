@@ -21,7 +21,7 @@ pipeline
            steps
            {
                sh '''
-               echo welcome2
+               echo welcome3
                '''
            }
        }
