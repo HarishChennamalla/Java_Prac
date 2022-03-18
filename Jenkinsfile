@@ -16,6 +16,15 @@ pipeline
                '''
            }
        }
+       stage('welcome1')
+       {
+           steps
+           {
+               sh '''
+               echo welcome1
+               '''
+           }
+       }
     
         stage('Build')
         {
