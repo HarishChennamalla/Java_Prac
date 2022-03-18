@@ -16,8 +16,27 @@ pipeline
                '''
            }
        }
-    
-       
+   
+        stage('Welcome')
+        {
+            steps
+            {
+                sh '''
+                echo Welcome to multi branch pipeline-1
+                '''
+            }        
+        } 
+        stage('welcome1')
+        {
+            steps
+            {
+                sh '''
+                echo welcome 2
+                '''
+            }
+        }
+        
+        }   
         stage('Build')
         {
             steps
@@ -25,6 +44,5 @@ pipeline
                 sh ' mvn clean package'
             }
         }
-        
     }
 }
