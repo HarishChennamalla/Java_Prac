@@ -7,11 +7,13 @@ pipeline
     }
     stages
     {
-        stage('checkout')
+        stage('Welcome')
         {
             steps
             {
-                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/HarishChennamalla/java_repo.git']]])
+                sh '''
+                echo welcome to multi branch pipeline
+                '''
             }
  
         }
@@ -20,16 +22,6 @@ pipeline
             steps
             {
                 sh ' mvn clean package'
-            }
-        }
-        stage('checking the code-quality')
-        {
-            steps
-            {
-                withSonarQubeEnv('sonar')
-                {
-                    sh 'mvn sonar:sonar'
-                }
             }
         }
     }
