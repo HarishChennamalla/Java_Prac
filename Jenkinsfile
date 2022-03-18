@@ -7,6 +7,16 @@ pipeline
     }
     stages
     {
+       stage('welcome')
+       {
+           steps
+           {
+               sh '''
+               echo welcome harish
+               '''
+           }
+       }
+   
         stage('Welcome')
         {
             steps
@@ -24,6 +34,8 @@ pipeline
                 echo welcome 2
                 '''
             }
+        }
+        
         }   
         stage('Build')
         {
@@ -32,6 +44,5 @@ pipeline
                 sh ' mvn clean package'
             }
         }
-
     }
 }
